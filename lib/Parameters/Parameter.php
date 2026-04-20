@@ -50,6 +50,16 @@ final class Parameter implements Stringable
         }
     }
 
+    public function getName(): string { return $this->name; }
+
+    public function getParameterDefinition(): ParameterDefinition { return $this->parameterDefinition; }
+
+    public function getValue(): mixed { return $this->value; }
+
+    public function isEmpty(): bool { return $this->isEmpty; }
+
+    public function getValueObject(): ?object { return $this->valueObject; }
+
     /**
      * Returns the string representation of the parameter value.
      */

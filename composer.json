@@ -1,7 +1,10 @@
 {
-    "name": "netgen/layouts-core",
-    "description": "Netgen Layouts enables you to build and manage complex web pages in a simpler way and with less coding. This is the core of Netgen Layouts, its heart and soul.",
+    "name": "se7enxweb/layouts-core",
+    "description": "Netgen Layouts core fork with PHP 8.4 private(set) Twig accessor compatibility.",
     "license": "MIT",
+    "replace": {
+        "netgen/layouts-core": "self.version"
+    },
     "type": "symfony-bundle",
     "authors": [
         {
