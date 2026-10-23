@@ -48,7 +48,7 @@ final class LayoutsDataCollector extends DataCollector
         $this->layoutUrlGenerator = $layoutUrlGenerator;
         $this->twig = $twig;
 
-        $coreVersion = PrettyVersions::getVersion('netgen/layouts-core')->getPrettyVersion();
+        $coreVersion = PrettyVersions::getVersion('se7enxweb/layouts-core')->getPrettyVersion();
         $this->data['version'] = sprintf('%s %s', $coreVersion, $edition);
         $this->data['docs_version'] = 'latest';
 
