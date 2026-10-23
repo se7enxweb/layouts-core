@@ -1,5 +1,5 @@
 {
-    "name": "netgen/layouts-core",
+    "name": "se7enxweb/layouts-core",
     "description": "Netgen Layouts enables you to build and manage complex web pages in a simpler way and with less coding. This is the core of Netgen Layouts, its heart and soul.",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -9,8 +9,11 @@
             "homepage": "https://netgen.io"
         }
     ],
+    "replace": {
+        "netgen/layouts-core": "self.version"
+    },
     "require": {
-        "php": "^7.4 || ^8.1",
+        "php": "^7.4 || ^8.0",
         "ext-intl": "*",
         "ext-mbstring": "*",
         "netgen/layouts-ui": "~1.4.0",
