@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\LayoutsBundle\DependencyInjection;
 
-use Composer\InstalledVersions;
 use Netgen\Layouts\Attribute;
 use Netgen\Layouts\Block\BlockDefinition\BlockDefinitionHandlerInterface;
 use Netgen\Layouts\Block\BlockDefinition\Handler\PluginInterface;
@@ -23,6 +22,7 @@ use Netgen\Layouts\Parameters\Form\MapperInterface as ParameterTypeFormMapperInt
 use Netgen\Layouts\Parameters\ParameterTypeInterface;
 use Netgen\Layouts\Persistence\Doctrine\QueryHandler\TargetHandlerInterface;
 use Netgen\Layouts\Transfer\Output\VisitorInterface;
+use Netgen\Layouts\Utils\PackageVersion;
 use Netgen\Layouts\View\Matcher\MatcherInterface;
 use Netgen\Layouts\View\Provider\ViewProviderInterface;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -131,7 +131,7 @@ final class NetgenLayoutsExtension extends Extension implements PrependExtension
     {
         $container->setParameter(
             'netgen_layouts.asset_version',
-            mb_substr(InstalledVersions::getReference('netgen/layouts-core') ?? '', 0, 8),
+            mb_substr(PackageVersion::getReference(), 0, 8),
         );
 
         $prependConfigs = [

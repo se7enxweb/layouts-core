@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\LayoutsDebugBundle\DataCollector;
 
-use Composer\InstalledVersions;
 use Netgen\Bundle\LayoutsBundle\Templating\Twig\GlobalVariable;
 use Netgen\Layouts\API\Values\LayoutResolver\Rule;
 use Netgen\Layouts\Persistence\Doctrine\Handler\LayoutHandler;
 use Netgen\Layouts\Persistence\Values\Status;
+use Netgen\Layouts\Utils\PackageVersion;
 use Netgen\Layouts\View\View\BlockViewInterface;
 use Netgen\Layouts\View\View\LayoutViewInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,7 +37,7 @@ final class LayoutsDataCollector extends DataCollector
         private Environment $twig,
         string $edition,
     ) {
-        $coreVersion = InstalledVersions::getPrettyVersion('netgen/layouts-core') ?? '';
+        $coreVersion = PackageVersion::getPrettyVersion();
         $this->data['version'] = sprintf('%s %s', $coreVersion, $edition);
         $this->data['docs_version'] = 'latest';
 
